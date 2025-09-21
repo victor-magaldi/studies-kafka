@@ -1,0 +1,36 @@
+### Criar tópico
+POST http://localhost:3000/create-topic
+Content-Type: application/json
+
+{
+  "topic": "meu-topico",
+  "numPartitions": 3,
+  "replicationFactor": 1
+}
+
+### Produzir mensagem simples
+POST http://localhost:3000/produce
+Content-Type: application/json
+
+{
+  "topic": "meu-topico",
+  "value": "Mensagem simples"
+}
+
+### Produzir mensagem com key e headers
+POST http://localhost:3000/produce
+Content-Type: application/json
+
+{
+  "topic": "meu-topico",
+  "key": "user-123",
+  "value": "Mensagem com key e headers",
+  "headers": {
+    "source": "rest-client",
+    "env": "dev"
+  }
+}
+
+### Listar mensagens consumidas
+GET http://localhost:3000/messages
+Content-Type: application/json
