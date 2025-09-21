@@ -31,6 +31,10 @@ Content-Type: application/json
   }
 }
 
-### Listar mensagens consumidas
-GET http://localhost:3000/messages
+### Listar mensagens group1
+GET http://localhost:3000/messages/group1
+Content-Type: application/json
+
+### Listar mensagens group2
+GET http://localhost:3000/messages/group2
 Content-Type: application/json
